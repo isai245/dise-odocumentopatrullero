@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link rel="stylesheet" href="cssinforme/estilo.css">
+    <link rel="stylesheet" href="jsinforme/informe.js">
+    <title>Informe policial </title>
+</head>
+<!--borrar los br y aplicar el diseño css
+verificar los form si solo uno o varios-->
+
+<body>
+
+    <div class="container">
+
+        <div class="date">
+            <?php
+            date_default_timezone_set('America/Mexico_City');
+            $fechahoy = date("d-m-y");
+            $horaactual = date("h:i");
+
+            ?>
+        </div>
+
+        <div class="rectanguloBasic ">
+            <div class="rectangulo2">
+                <label id="textorectangulo2">Framelova </label>
+            </div>
+            <div class="caja">
+                <div class="left-box">
+                    <img src="images/boton-alerta.png" class="imagenizq">
+                    <!-- Contenido de la caja izquierda -->
+                </div>
+                <div class="right-box">
+                    <!-- Contenido de la caja derecha -->
+                    <div class="d-flex justify-content-between">
+                        <div class="input-group">
+
+                        </div>
+
+                        <span class="folio-label input-group-text" id="nuevo">PU CH</span>
+                        <div id="prueba" class="folio-input folio-label input-group-text">
+                            <?php echo $fechahoy . ' ' . $horaactual; ?>
+                        </div>
+
+
+
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="input-group">
+                            <!-- espacio nombre de usuario u otros datos 
+            <div>
+
+                <span class="input-group-text folio-label" id="nuevo">Folio</span>
+            </div>-->
+                        </div>
+                        <span class="folio-label input-group-text" id="nuevo">Folio</span>
+                        <input id="prueba" type="text" placeholder="Num/Cod" class="folio-input folio-label input-group-text">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <!--basic-->
+
+
+
+
+        <div class="rectangulo">
+            <!-- Contenido dentro del rectángulo, si es necesario -->
+            <p class="text-center" id="textorectangulo">Informe policial</p>
+        </div>
+
+        <div style="text-align: center;">
+            <img src="images/logo-extendido.png" class="imageninicio">
+        </div>
+
+        <div class="rectanguloBasic cont_caja">
+            <div class="rectangulo2">
+                <label id="textorectangulo2">Fecha de reporte </label>
+            </div>
+
+
+            <form>
+                <label id="noExpediente"> No de expediente/codigo : <input type="text" id="expediente" name="expediente" placeholder="Codigo">
+                </label>
+
+                <label for="fecha">Fecha de reporte </label>
+                <input type="date" id="fechaReporte" name="fechaReporte">
+                <label for="time">Hora de reporte </label>
+                <form name="formulario">
+                    <input type="time" name="hora" value="11:45:00" max="23:39:59" min="01:00:00" step="1">
+                </form>
+            </form>
+        </div>
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Descripcion de incidencia </p>
+            </div>
+            <form>
+                <div class="d-flex align-items-center">
+                    <label for="formGroupIncidencia">¿Describa el método mediante el cual obtuvo conocimiento acerca de la incidencia en cuestión ?</label>
+                </div>
+                <div class="d-flex  justify-content-center">
+                    <input class="bigtext" id="formGroupIncidencia" type="text" placeholder="Descripción">
+                </div>
+            </form>
+
+            <form class="my-form">
+                <div class="d-flex align-items-center">
+                    <label for="fecha">Fecha en la que ocurrió la incidencia </label>
+                    <div class="d-flex  justify-content-center">
+                        <input class="fecha" type="date">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label for="nombre time">Horaen la que ocurrió la incidencia </label>
+                        <input type="time" class="form-control" name="hora" value="11:45:00" max="23:39:59" min="01:00:00" step="1">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Hora de arrivo de la unidad </label>
+                        <input type="time" class="form-control" name="hora" value="11:45:00" max="23:39:59" min="01:00:00" step="1">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Hora de finalizacion de la incidencia </label>
+                        <input type="time" class="form-control" name="hora" value="11:45:00" max="23:39:59" min="01:00:00" step="1">
+                    </div>
+                </div>
+
+            </form>
+
+
+
+            <form class="tipoIncidencia seleccion">
+                <h6>Seleccione la naturaleza del incidente</h6>
+
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline1">Denuncia</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline2">Flagrancia</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline3" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline3">Localización</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline4" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline4">Mantenimiento Judicial</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline5" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline5">Aportación</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline6" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline6">Descubrimiento</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="customRadioInline7" name="customRadioInline1" class="form-check-input">
+                    <label class="form-check-label" for="customRadioInline7"> Llamado de Emergencia</label>
+                </div>
+
+            </form>
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Descripcion de hechos </p>
+            </div>
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>¿Proporciona una descripción detallada de los hechos según su perspectiva ?</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Descripcion de acciones </p>
+            </div>
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describa las acciones llevadas a cabo durante la incidencia, destacando aquellas que se consideren pertinentes? </label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="rectanguloBasic">
+            <div class="agentes">
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Apoyo de oficiales </p>
+
+                </div>
+
+                <div>
+
+                    <label class="control-texto">¿Se contó con el respaldo de otros agentes durante la gestión de la incidencia? </label>
+
+               
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="agentesIncidencia1" name="agentesIncidencia" class="custom-control-input">
+                            <label class="custom-control-label" for="agentesIncidencia1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="agentesIncidencia2" name="agentesIncidencia" class="custom-control-input">
+                            <label class="custom-control-label" for="agentesIncidencia2">NO</label>
+                        </div>
+              
+
+                </div>
+
+
+                <form>
+                    <div class="form-group">
+                        <div class="text-center">
+                            <label for="formGroupInstitucion">Proporcione el nombre de la institucion a la cual pertenecen los agentes </label>
+                        </div>
+
+                        <input type="text" class="form-control" id="formGroupInstitucion" placeholder="Insititucion">
+                    </div>
+                </form>
+
+                <form>
+                    <div class="text-center">
+                        <label>Proporciona el nombre del oficial a cargo de la supervisión de los agentes participantes</label>
+                    </div>
+
+                    <div class="row names">
+                        <div class="col">
+                            <label for="nombre">Apellido paterno </label>
+                            <input type="text" class="form-control" placeholder="Apellido Paterno">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">Apellido Materno</label>
+                            <input type="text" class="form-control" placeholder="Apellido Materno">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">Nombres o Nombres </label>
+                            <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="rectanguloBasic">
+            <div class="Inspeccion">
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Inspeccion del lugar </p>
+
+                </div>
+                <div class="pregunta">
+                    <label class="control-texto">¿Se llevó a cabo una inspección del lugar como parte de las acciones emprendidas en relación con la incidencia ?</label>
+                    <div class="text-center">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="inspeccion1" name="inspeccion" class="custom-control-input">
+                            <label class="custom-control-label" for="inspeccion1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="inspeccion2" name="inspeccion" class="custom-control-input">
+                            <label class="custom-control-label" for="inspeccion2">NO</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="rectanguloBasic">
+            <div id="camposDanosFisicosTerceros" class="hidden">
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Daños a terceros </p>
+                </div>
+
+                <div>
+                 
+                        <label class="control-texto">¿Se constató de lesiones físicas a terceros como consecuencia de la incidencia?</label>
+              
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="terceros1" name="terceros" class="custom-control-input">
+                            <label class="custom-control-label" for="terceros1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="terceros2" name="terceros" class="custom-control-input">
+                            <label class="custom-control-label" for="terceros2">NO</label>
+                        </div>
+             
+                </div>
+
+                <div>
+              
+                        <label class="control-texto">¿Se confirmó la pérdida de vidas humanas como resultado de la incidencia?</label>
+               
+                 
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fallecidos1" name="fallecidos" class="custom-control-input">
+                            <label class="custom-control-label" for="fallecidos1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fallecidos2" name="fallecidos" class="custom-control-input">
+                            <label class="custom-control-label" for="fallecidos2">NO</label>
+                        </div>
+                  
+                </div>
+
+                <form class="my-form">
+                    <div class="d-flex align-items-center">
+                        <label for="formGroupLesionadas">Ingrese el numero de personas lesionadas </label>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input class="numeros" type="num">
+                        </div>
+                    </div>
+                </form>
+
+
+                <div>
+                
+                        <label class="control-texto">¿Se registraron personas lesionadas como consecuencia de la incidencia?</label>
+                
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="lesionadas1" name="lesionadas" class="custom-control-input">
+                            <label class="custom-control-label" for="lesionadas1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="lesionadas2" name="lesionadas" class="custom-control-input">
+                            <label class="custom-control-label" for="lesionadas2">NO</label>
+                        </div>
+                   
+                </div>
+
+                <form class="my-form">
+                    <div class="d-flex align-items-center">
+                        <label for="formGroupFallecidos">Ingresa el numero de perdidas humanas</label>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input class="numeros" type="num">
+                        </div>
+                    </div>
+                </form>
+
+
+                <div class="armas">
+                    <div class="rectangulo2">
+                        <p id="textorectangulo2">Uso de armas </p>
+                    </div>
+
+                    <div>
+                        <div class="text-center">
+                            <label class="control-texto">¿Se emplearon armas letales o incapacitantes durante el incidente?</label>
+                        </div>
+                        <div class="text-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckUsoArmasLe">
+                                <label class="form-check-label" for="flexCheckUsoArmasLe">
+                                    Uso de armas letales
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckUsoArmasInc" checked>
+                                <label class="form-check-label" for="flexCheckUsoArmasInc">
+                                    Uso de armas incapacitantes
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div><!--armas-->
+
+            </div>
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Asistencia médica</p>
+                </div>
+
+                <div>
+                 
+                        <label class="control-texto">¿Se requirió asistencia médica durante la incidencia?</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="AsistenciasMedi1" name="AsistenciasMedi" class="custom-control-input">
+                            <label class="custom-control-label" for="AsistenciasMedi1">SI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="AsistenciasMedi2" name="AsistenciasMedi" class="custom-control-input">
+                            <label class="custom-control-label" for="AsistenciasMedi2">NO</label>
+                 
+                </div>
+
+
+
+
+
+                <div class="mx-4 p-3">
+                    <div class="text-center mt-4 mb-5">
+                        <div class="cs-form mt-4">
+                            <label>¿Describa cual fue la razón que motivó la necesidad de asistencia médica durante la incidencia?</label>
+                            <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div><!--danos terceros-->
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Direccion de incidencia </p>
+            </div>
+
+            <div class="text-center mt-4 mb-5">
+                <label>Proporcione los datos correspondientes a la dirección en la que tuvo lugar la incidencia </label>
+            </div>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">Calle/tramo carretero</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">No exterior</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">No interior</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">CP</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Colonia/localidad</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Municipio</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Entidad federativa</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Latitud</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Longitud</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">Referencias </label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                </div>
+            </form>
+            <label>Croquis o Fotografia </label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+
+            </div>
+        </div>
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Detenidos</p>
+            </div>
+
+            <div>
+                <label class="control-texto">¿Se procedió a la detención de personas durante el incidente?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="detenidos1" name="detenidos" class="custom-control-input">
+                    <label class="custom-control-label" for="detenidos1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="detenidos2" name="detenidos" class="custom-control-input">
+                    <label class="custom-control-label" for="detenidos2">NO</label>
+                </div>
+            </div>
+
+            <form class="my-form">
+                <div class="d-flex align-items-center">
+                    <label for="formGroupRND">Ingrese el numero/codigo del detenido: </label>
+                    <div class="d-flex  justify-content-center">
+                        <input type="text" class="numeros" id="formGroupRND" placeholder="RND">
+                    </div>
+                </div>
+
+            </form>
+
+
+            <form>
+                <div class="row">
+                    <div class="col">
+
+                        <label for="nombre">Fecha de puesta a dispocision </label>
+                        <input type="date" id="fechaDispocision" name="fechaDispocision">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Hora de puesta a dispocision </label>
+                        <input type="time" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Fecha de Nacimiento del detenido</label>
+                        <input type="date" id="fechaNacimientoDet" name="fechaNacimientoDet">
+                    </div>
+
+                </div>
+            </form>
+
+
+            <form>
+                <div class="row names">
+                    <div class="col">
+                        <label for="nombre">Apellido paterno </label>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Apellido Materno </label>
+                        <input type="text" class="form-control" placeholder="Apellido Materno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Nombres o Nombres</label>
+                        <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Apodo o alias </label>
+                        <input type="text" class="form-control" placeholder="Apodo/Alias">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Nacionalidad</label>
+                        <input type="text" class="form-control" placeholder="Nacionalidad">
+                    </div>
+                </div>
+            </form>
+
+
+
+            </form>
+
+            <form>
+                <div class="col">
+                    <div class="row">
+                        <div class="sexo" id="sexo">
+                            <label>Selecciona el género del individuo detenido</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sexo1" name="sexo" class="custom-control-input">
+                                <label class="custom-control-label" for="sexo1">Femenino</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="sexo2" name="sexo" class="custom-control-input">
+                                <label class="custom-control-label" for="sexo2">Masculino</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="row names">
+                        <div class="col">
+                            <label for="nombre">¿Proporcione una estatura aproximada del individuo detenido? </label>
+                            <input type="num" class="form-control" placeholder="">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">¿Describa el color de piel del individuo detenido? </label>
+                            <input type="text" class="form-control" placeholder="Color">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">¿Describa el tipo de cabello del individuo detenido?</label>
+                            <input type="text" class="form-control" placeholder="Cabello">
+                        </div>
+
+                    </div>
+                </form>
+
+            </form>
+
+
+
+
+
+            <label class="control-texto">Seleccione el tipo de cuerpo del individuo detenido</label>
+            <form class="text-center">
+
+
+                <div class="d-flex justify-content-center seleccion">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDelgado">
+                        <label class="form-check-label" for="flexCheckDelgado">
+                            Delgado
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckMediana" checked>
+                        <label class="form-check-label" for="flexCheckMediana">
+                            Mediana
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckAtletica" checked>
+                        <label class="form-check-label" for="flexCheckAtletica">
+                            Atlética
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckObesa" checked>
+                        <label class="form-check-label" for="flexCheckObesa">
+                            Obesa
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>¿Proporcione detalles sobre las señas particulares del individuo detenido? </label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Rasgos visibles</p>
+            </div>
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describa cuales son los rasgos visibles del detenido que pueden ser identificados</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Lesiones</p>
+            </div>
+
+            <div>
+                <label class="control-texto">¿El detenido presento lesiones visibles durante el arresto?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="lesionesDet1" name="lesionesDet" class="custom-control-input">
+                    <label class="custom-control-label" for="lesionesDet1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="lesionesDet2" name="lesionesDet" class="custom-control-input">
+                    <label class="custom-control-label" for="lesionesDet2">NO</label>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describa cuáles son las lesiones que presentó el individuo detenido</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Padecimiento</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">¿Cuáles fueron los padecimientos que presentó el detenido?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="padecimiento1" name="padecimiento" class="custom-control-input">
+                    <label class="custom-control-label" for="padecimiento1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="padecimiento2" name="padecimiento" class="custom-control-input">
+                    <label class="custom-control-label" for="padecimiento2">NO</label>
+                </div>
+            </div>
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describa los padecimiento que mostró el detenido</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Grupo delictivo</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">¿El detenido forma parte de algún grupo delictivo?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="grupoDelic1" name="grupoDelic" class="custom-control-input">
+                    <label class="custom-control-label" for="grupoDelic1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="grupoDelic2" name="grupoDelic" class="custom-control-input">
+                    <label class="custom-control-label" for="grupoDelic2">NO</label>
+                </div>
+            </div>
+
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Proporciona una descripción formal de los grupos o grupo delictivo al que el detenido está asociado</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Direccion del detenido</p>
+            </div>
+
+            <div class="text-center mt-4 mb-5">
+                <label>Proporcione los datos correspondientes a la dirección del detenido </label>
+            </div>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">Calle/tramo carretero</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">No exterior</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">No interior</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">CP</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Colonia/localidad</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Municipio</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Entidad federativa</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">Referencias </label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                </div>
+            </form>
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Informacion Adicional</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">Se dio lectura a los derechos detenido</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="lecturaDereDet1" name="lecturaDereDet" class="custom-control-input">
+                    <label class="custom-control-label" for="lecturaDereDet1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="lecturaDereDet2" name="lecturaDereDet" class="custom-control-input">
+                    <label class="custom-control-label" for="lecturaDereDet2">NO</label>
+                </div>
+            </div>
+
+
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label for="nombre">Lugar al que se llevó a cabo el traslado del individuo </label>
+                        <input type="text" class="form-control" placeholder="Traslado">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Proporcione el documento con el que el identificó el detenido </label>
+                        <input type="text" class="form-control" placeholder="Documento">
+                    </div>
+                </div>
+            </form>
+
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+            </div>
+        </div>
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Uso de fuerza</p>
+            </div>
+
+            <div>
+                <label class="control-texto">¿Fue necesario el empleo de fuerza durante la incidencia?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Usofuerz1" name="Usofuerz" class="custom-control-input">
+                    <label class="custom-control-label" for="Usofuerz1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Usofuerz2" name="Usofuerz" class="custom-control-input">
+                    <label class="custom-control-label" for="Usofuerz2">NO</label>
+                </div>
+            </div>
+
+
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describe las circunstancias que llevaron a la necesidad de utilizar la fuerza durante la incidencia</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Vehiculo</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">¿Hubo vehículos implicados en el incidente?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="vehiculos1" name="vehiculos" class="custom-control-input">
+                    <label class="custom-control-label" for="vehiculos1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="vehiculos2" name="vehiculos" class="custom-control-input">
+                    <label class="custom-control-label" for="vehiculos2">NO</label>
+                </div>
+            </div>
+
+
+            <div class="form-outline">
+
+                <form class="my-form">
+                    <div class="d-flex align-items-center">
+                        <label for="numeroVehiInv">Ingresa el numero de vehículos involucrados</label>
+                        <div class="d-flex  justify-content-center">
+                            <input class="numeros" id="numeroVehiInv" type="num">
+                        </div>
+                    </div>
+
+                </form>
+
+
+
+                <div class="mx-4 p-3">
+                    <div class="text-center mt-4 mb-5">
+                        <div class="cs-form mt-4">
+                            <label>Describe el vehículo involucrado en la incidencia </label>
+                            <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="row names">
+                        <div class="col">
+                            <label for="tipoVehic">Proporciona el Tipo de vehículo</label>
+                            <input type="text" class="form-control" id="tipoVehic" placeholder="Terrestre/Acuatico">
+                        </div>
+                        <div class="col">
+                            <label for="procedenciaVehi">Procedencia del vehículo</label>
+                            <input type="text" class="form-control" placeholder="Procedencia">
+                        </div>
+                        <div class="col">
+                            <label for="modeloVehic">Modelo de vehículo</label>
+                            <input type="text" class="form-control" placeholder="Modelo">
+                        </div>
+                    </div>
+
+                    <div class="row names">
+                        <div class="col">
+                            <label for="MarcaVehic">Marca del vehículo</label>
+                            <input type="text" class="form-control" id="MarcaVehic" placeholder="Marca">
+                        </div>
+                        <div class="col">
+                            <label for="matriculaVehic">Matricula del vehículo</label>
+                            <input type="text" class="form-control" id="matriculaVehic" placeholder="Matricula">
+                        </div>
+                        <div class="col">
+                            <label for="duenoVehic">Nombre del dueño del vehiculo </label>
+                            <input type="text" class="form-control" id="duenoVehic" placeholder="Paterno-Materno-Nombre">
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="tipoVehiculo">
+                    <div class="text-center">
+                        <label class="control-texto">Selecciona el tipo de uso que se le da al vehículo </label><br><br>
+                    </div>
+                    <div class="text-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="usoParticu">
+                            <label class="form-check-label" for="usoParticu">
+                                Uso particular
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" value="" id="transportePubl" checked>
+                            <label class="form-check-label" for="transportePubl">
+                                Transporte publico
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" value="" id="transporteCarga" checked>
+                            <label class="form-check-label" for="transporteCarga">
+                                Transporte de carga
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="text-center">
+                        <label class="control-texto">¿Cuál fue el destino asignado al vehículo relacionado con la incidencia?</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <input class="bigtext" id="destinoVehiculo" type="text" placeholder="nombre de del lugar">
+                    </div>
+                </div>
+
+
+
+                <div class="mx-4 p-3">
+                    <div class="text-center mt-4 mb-5">
+                        <div class="cs-form mt-4">
+                            <label>Describa a detalle las observaciones efectuadas en relación al vehículo</label>
+                            <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Preservacion </p>
+            </div>
+
+            <div class="pregunta">
+                <label class="control-texto">¿Se necesito preservación del lugar?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="preservacionlug1" name="preservacionlug" class="custom-control-input">
+                    <label class="custom-control-label" for="preservacionlug1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="preservacionlug2" name="preservacionlug" class="custom-control-input">
+                    <label class="custom-control-label" for="preservacionlug2">NO</label>
+                </div>
+            </div>
+
+
+            <div class="text-center">
+                <label class="control-texto">Proporciona el nombre del encargado de la preservacion del lugar de la incidencia </label>
+            </div>
+
+            <form>
+                <div class="row names">
+                    <div class="col">
+                        <label for="nombre">Apellido paterno </label>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Apellido Materno</label>
+                        <input type="text" class="form-control" placeholder="Apellido Materno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Nombres o Nombres </label>
+                        <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Inmueble </p>
+            </div>
+
+            <div class="text-center">
+                <label class="control-texto">Proporcione los datos correspondientes al propietario del inmueble </label>
+            </div>
+
+
+            <form>
+                <div class="row names">
+                    <div class="col">
+                        <label for="nombre">Apellido paterno </label>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Apellido Materno</label>
+                        <input type="text" class="form-control" placeholder="Apellido Materno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Nombres o Nombres </label>
+                        <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                    </div>
+                    <div class="col">
+                        <label for="entregaRecepInmuFe">Fecha de entrega </label>
+                        <input type="date" id="entregaRecepInmuFe" name="entregaRecepInmuFe">
+                    </div>
+                    <div class="col">
+                        <label for="entregaRecepInmuHo">Horario de entrega </label>
+                        <input type="time" class="form-control">
+                    </div>
+                </div>
+            </form>
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Proporcione una descripción del inmueble vinculado a la incidencia</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Armas involucradas</p>
+            </div>
+
+            <div>
+                <label class="control-texto">¿Hubo presencia de armas en el incidente?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="armasInvo1" name="armasInvo" class="custom-control-input">
+                    <label class="custom-control-label" for="armasInvo1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="armasInvo2" name="armasInvo" class="custom-control-input">
+                    <label class="custom-control-label" for="armasInvo2">NO</label>
+                </div>
+            </div>
+
+            <form>
+                <div class="row">
+
+                    <div class="col">
+                        <label for="numeroArmEn">¿Cuántas armas se encontraron en la ubicacion?</label>
+                        <input class="form-control" id="numeroArmEn" type="num" placeholder="Numero de armas" style="width : 250px; ">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="tipoArmIncidencia" id="tipoArmIncidencia">
+                                <label>Selecciona el tipo de armas se hallaron en el incidente</label>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="tipoArmIncid">
+                                    <label class="form-check-label" for="tipoArmIncid">
+                                        Armas letales
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="tipoArmIncid">
+                                    <label class="form-check-label" for="tipoArmIncid">
+                                        Armas blancas
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="row">
+                <div class="col">
+                    <label for="nombre">Ingrese el tipo de arma involucrada en el incidente</label>
+                    <input type="text" class="form-control" placeholder="Tipo">
+                </div>
+                <div class="col">
+                    <label for="nombre">Ingrese el numero de serie del arma involucrada en el incidente </label>
+                    <input type="text" class="form-control" placeholder="Serie">
+                </div>
+                <div class="col">
+                    <label for="nombre">Ingrese el destino del arma involucrada en el incidente </label>
+                    <input type="text" class="form-control" placeholder="Destino">
+                </div>
+            </div>
+
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Ingrese las observaciones detalladas acerca del o los arma(s) encontrada(s) en la incidencia</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Testigos</p>
+            </div>
+
+            <div>
+                <label class="control-texto">¿Existieron testigos comprometidos en el incidente? </label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="testigos1" name="testigos" class="custom-control-input">
+                    <label class="custom-control-label" for="testigos1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="testigos2" name="testigos" class="custom-control-input">
+                    <label class="custom-control-label" for="testigos2">NO</label>
+                </div>
+            </div>
+
+            <form class="my-form">
+                <div class="d-flex align-items-center">
+                    <label for="numeroTestig">¿Proporcionar el número de testigos involucrados en el incidente?</label>
+                    <div class="d-flex  justify-content-center">
+                        <input class="numeros" id="numeroTestig" type="num">
+                    </div>
+                </div>
+
+            </form>
+
+
+            <form>
+                <div class="row names">
+                    <div class="col">
+                        <label for="nombre">Apellido paterno </label>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Apellido Materno</label>
+                        <input type="text" class="form-control" placeholder="Apellido Materno">
+                    </div>
+                    <div class="col">
+                        <label for="nombre">Nombres o Nombres </label>
+                        <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Evidencia</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">Se localizaron elementos probatorios en la escena del suceso</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="evidenciaLug1" name="evidenciaLug" class="custom-control-input">
+                    <label class="custom-control-label" for="evidenciaLug1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="evidenciaLug2" name="evidenciaLug" class="custom-control-input">
+                    <label class="custom-control-label" for="evidenciaLug2">NO</label>
+                </div>
+            </div>
+
+
+            <div class="mx-4 p-3">
+                <div class="text-center mt-4 mb-5">
+                    <div class="cs-form mt-4">
+                        <label>Describir la evidencia encontrada y proporcionar información sobre el destino que se le dio</label>
+                        <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                    </div>
+                </div>
+            </div>
+
+            <label>Fotos o imagenes de la evidencia</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+            </div>
+        </div>
+
+        <div class="rectanguloBasic">
+            <div class="rectangulo2">
+                <p id="textorectangulo2">Entrevistas</p>
+            </div>
+
+
+            <div>
+                <label class="control-texto">¿Se llevaron a cabo entrevistas en el marco de la investigación?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="entrevistasRea" name="entrevistasRea" class="custom-control-input">
+                    <label class="custom-control-label" for="entrevistasRea1">SI</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="entrevistasRea2" name="entrevistasRea" class="custom-control-input">
+                    <label class="custom-control-label" for="entrevistasRea2">NO</label>
+                </div>
+            </div>
+
+                <form class="my-form">
+                    <div class="d-flex align-items-center">
+                        <label class="form-label" for="numeroEntrevistas">¿Proporcionar el número de entrevistas realizadas</label>
+                        <div class="d-flex  justify-content-center">
+                            <input class="numeros" id="formGroupIncidencia" type="num">
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <form>
+                    <div class="row names">
+                        <div class="col">
+                            <label for="nombre">Apellido paterno </label>
+                            <input type="text" class="form-control" placeholder="Apellido Paterno">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">Apellido Materno</label>
+                            <input type="text" class="form-control" placeholder="Apellido Materno">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">Nombres o Nombres </label>
+                            <input type="text" class="form-control" placeholder="Nombre/Nombres">
+                        </div>
+                    </div>
+                </form>
+
+                <div>
+                    <div class="text-center">
+                        <label class="control-texto">Seleccionar la calidad de las entrevista llevada a cabo en relación con el incidente</label>
+                    </div>
+                    <div class="text-center seleccion">
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="Denunciante">
+                            <label class="form-check-label" for="Denunciante">
+                                Denunciante
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" value="" id="Victima" checked>
+                            <label class="form-check-label" for="Victima">
+                                Victima u ofendido
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            <input class="form-check-input" type="checkbox" value="" id="testigo" checked>
+                            <label class="form-check-label" for="testigo">
+                                Testigo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label for="nacionalidad">Nacionalidad </label>
+                            <input type="text" id="nacionalidadEntrev" name="nacionalidadEntrev">
+                        </div>
+                        <div class="col">
+                            <label for="nombre">Fecha de entrevista</label>
+                            <input type="date" id="fechaEntrevis" name="fechaEntrevis">
+                        </div>
+                        <div class="col">
+                            <label for="horario">Horario </label>
+                            <input type="time" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="fecha">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimientoEntr" name="fechaNacimientoEntr">
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="sexo" id="sexo">
+                                    <label>Selecciona el género del entrevistado</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="sexoentrevistado1" name="sexoentrevistado" class="custom-control-input">
+                                        <label class="custom-control-label" for="sexoentrevistado1">Femenino</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="sexoentrevistado2" name="sexoentrevistado" class="custom-control-input">
+                                        <label class="custom-control-label" for="sexoentrevistado2">Masculino</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form>
+                    <div class="row datos">
+                        <div class="col">
+                            <label for="nombre">Telefono/Celular del entrevistado</label>
+                            <input type="text" class="form-control" placeholder="Numero">
+                        </div>
+                        <div class="col">
+                            <label for="documento">Documento de identificación del entrevistado</label>
+                            <input type="text" class="form-control" placeholder="Documento">
+                        </div>
+                        <div class="col">
+                            <label for="noidenti">No de identificacion del entrevistado </label>
+                            <input type="text" class="form-control" placeholder="No">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Direccion Entrevistado</p>
+                </div>
+
+                <div class="text-center">
+                        <label class="control-texto">Proporcione los datos correspondientes a la dirección del entrevistado </label>
+                    </div>
+
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Calle/tramo carretero</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">No exterior</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">No interior</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">CP</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Colonia/localidad</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Municipio</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Entidad federativa</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Referencias </label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Descripcion de hechos</p>
+
+                </div>
+
+                <div class="mx-4 p-3">
+                    <div class="text-center mt-4 mb-5">
+                        <div class="cs-form mt-4">
+                            <label>Proporcione una narración detallada de los hechos ocurridos en la incidencia, tal como fueron descritos por el entrevistado</label>
+                            <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+ 
+            <div class="rectanguloBasic">
+                <div class="rectangulo2">
+                    <p id="textorectangulo2">Documentos adjuntos</p>
+                </div>
+
+                <div>
+                <label class="control-texto">¿Se incorporaran documentos adicionales en relación con la incidencia?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="documentosadiciona1" name="documentosadiciona" class="custom-control-input">
+                        <label class="custom-control-label" for="documentosadiciona1">SI</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="documentosadiciona2" name="documentosadiciona" class="custom-control-input">
+                        <label class="custom-control-label" for="documentosadiciona2">NO</label>
+                    </div>
+            </div>
+
+               
+                   
+                   
+
+        
+
+
+                <div class="mx-4 p-3">
+                    <div class="text-center mt-4 mb-5">
+                        <div class="cs-form mt-4">
+                            <label>Ingresa los documentos adicionales que se agregarán a la documentacion existente</label>
+                            <textarea class="form-control border-top-0 border-left-0 border-right-0"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+                
+
+
+          
+
+
+            <div class="rectanguloBasic">
+
+
+                <!--
+                        <div class="container container-collapse">
+                            <div class="blockcode">
+                                <div class="header">Multiple Targets</div>
+                                <div class="example2">
+                                    <p class="d-flex flex-wrap">
+                                        <a class="btn btn-light me-0 mb-2" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                            Reporte
+                                        </a>
+                                        <button class="btn btn-light me-0 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+                                            Hecho probable delictivo
+                                        </button>
+                                        <button class="btn btn-light me-0 mb-2" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">
+                                            Justicia civica
+                                        </button>
+                                    </p>
+
+
+                                    <form action="005-ejemplo-atributo-required-html5.php" method="POST">
+                                        Fecha de nacimiento: <input type="date" name="fechanac" required>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+-->
+            </div>
+
+</div>
+
+
+      
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function mostrarCampos() {
+                document.getElementById('camposdatosOficiales').style.display = 'block';
+            }
+
+            function ocultarCampos() {
+                document.getElementById('camposdatosOficiales').style.display = 'none';
+            }
+        </script>
+</body>
+
+</html>
