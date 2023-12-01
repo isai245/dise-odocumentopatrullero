@@ -1,0 +1,157 @@
+.body {
+    text-align: center;
+    font-size: 12px;
+}
+
+.rectangulo {
+    width: 68%;
+    height: 30px;
+    background-color: #BFBFBF;
+    margin: 20px auto;
+}
+
+.rectanguloBasic {
+    color: black;
+    text-align: left;
+    border: 2px solid #333;
+    width: 100%;
+    max-width: 748px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 10px;
+    box-sizing: border-box;
+    height: auto;
+    font-size: 14px;
+}
+
+.imageninicio {
+    width: 200px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.imagenizq {
+    margin-left: 5px;
+    /* Ajusta el margen según sea necesario */
+    width: 100px;
+}
+
+
+.rectangulo2 {
+    width: 102.8%;
+    height: 23px;
+    background-color: #BFBFBF;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 10px;
+}
+
+.rectanguloBasic label,
+.rectanguloBasic input {
+    margin-bottom: 10px;
+    font-size: 12px;
+
+}
+
+
+.rectanguloBasic .row {
+    margin-top: 10px;
+}
+
+.custom-control-inline {
+    margin-right: 30px;
+
+}
+
+.control-texto {
+    margin-right: 20px;
+}
+
+.form-check-label {
+    margin-right: 40px;
+   
+ 
+
+}
+
+.opciones .custom-control {
+   
+    margin: 5px; /* Ajusta el margen según sea necesario */
+}
+
+.folio-label {
+
+    width: 70px;
+    height: 38px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    /* Color de fondo del recuadro */
+    border: 1px solid #ccc;
+    /* Borde del recuadro */
+}
+
+.folio-input {
+    /*recuado de folio*/
+    width: 150px;
+    height: 38px;
+    margin-left: 2px;
+}
+
+.caja {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.left-box {
+    flex: 1;
+}
+
+.right-box {
+    flex: 1;
+    margin-left: auto;
+}
+
+
+.bigtext {
+    width: 650px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fecha,.numeros {
+    width: 220px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 90px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.names,
+.datos {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.my-form {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tipoVehiculo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
